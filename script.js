@@ -2,13 +2,14 @@ const video = document.querySelector('#video')
 // const canvas = document.querySelector('#canvas')
 
 Promise.all([
-    faceapi.nets.ageGenderNet.loadFromUri('/models'),
-    faceapi.nets.faceExpressionNet.loadFromUri('/models'),
-    faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
+    // 在Github服务器上位置是/faceAl/models，在本地是/models
+    faceapi.nets.ageGenderNet.loadFromUri('/faceAl/models'),
+    faceapi.nets.faceExpressionNet.loadFromUri('/faceAl/models'),
+    faceapi.nets.faceLandmark68Net.loadFromUri('/faceAl/models'),
     // faceapi.nets.faceLandmark68TinyNet.loadFromUri('/models'),
-    faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
+    faceapi.nets.faceRecognitionNet.loadFromUri('/faceAl/models'),
     // faceapi.nets.ssdMobilenetv1.loadFromUri('/models'),
-    faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
+    faceapi.nets.tinyFaceDetector.loadFromUri('/faceAl/models'),
     // faceapi.nets.tinyYolov2.loadFromUri('/models')
 ]).then(startVideo)
 // 
